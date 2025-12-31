@@ -63,8 +63,6 @@ export function Post({
     maskRepeat: "no-repeat",
   };
 
-  const deletePost = useAction(api.myFunctions.deletePostWithAttachments)
-
   return (
     <Card
       className={cn(
