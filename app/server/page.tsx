@@ -1,4 +1,3 @@
-import Home from "./inner";
 import { preloadQuery, preloadedQueryResult } from "convex/nextjs";
 import { api } from "@/convex/_generated/api";
 import Image from "next/image";
@@ -48,7 +47,6 @@ export default async function ServerPage() {
           </pre>
         </code>
       </div>
-      <Home preloaded={preloaded} />
     </main>
   );
 }
