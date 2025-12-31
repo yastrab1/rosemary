@@ -1,7 +1,7 @@
 import {api} from "@/convex/_generated/api";
 import {useQuery} from "convex/react";
 import {Card} from "@/components/ui/card";
-import {TornLinedPaperCard} from "@/components/ui/JaggedText";
+import {Post} from "@/components/ui/JaggedText";
 
 export default function Content() {
     const posts = useQuery(api.myFunctions.getAllPosts);
@@ -11,10 +11,10 @@ export default function Content() {
     }
 
     return (
-        <ul>
+        <div>
             {posts.map(post => (
-                <TornLinedPaperCard key={post._id} date={new Date(Number(post.date))} attachments={post.attachments}>{post.content}</TornLinedPaperCard>
+                <Post key={post._id} date={new Date(Number(post.date))} attachments={post.attachments} id={post._id}>{post.content}</Post>
             ))}
-        </ul>
+        </div>
     );
 }

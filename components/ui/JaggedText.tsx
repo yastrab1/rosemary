@@ -3,6 +3,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { PopupImage } from "@/components/PopupImage";
+import { Delete, DeleteIcon, Trash, Trash2 } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { useAction, useMutation } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { Id } from "@/convex/_generated/dataModel";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "./label";
+import { Input } from "./input";
+import { Button } from "@/components/ui/button";
 
 type TornLinedPaperCardProps = {
   title?: string;
@@ -10,18 +28,20 @@ type TornLinedPaperCardProps = {
   className?: string;
   lineGapPx?: number; // rozostup linajok
   date: Date;
-  attachments: string[];
+  attachments: string[],
+  id:Id<"posts">
 };
 
 const TORN_SVG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 24" preserveAspectRatio="none"><path d="M0,14 C12,6 24,22 36,14 C48,6 60,22 72,14 C84,6 96,22 108,14 C120,6 132,22 144,14 C156,6 168,22 180,14 C198,6 210,20 240,12 L240,0 L0,0 Z" fill="black"/></svg>`;
 
-export function TornLinedPaperCard({
+export function Post({
   title = "Poznámky",
   children,
   className,
   lineGapPx = 22,
   date,
   attachments,
+  id
 }: TornLinedPaperCardProps) {
   const lineStyle: React.CSSProperties = {
     background: `repeating-linear-gradient(
@@ -43,10 +63,12 @@ export function TornLinedPaperCard({
     maskRepeat: "no-repeat",
   };
 
+  const deletePost = useAction(api.myFunctions.deletePostWithAttachments)
+
   return (
     <Card
       className={cn(
-        "relative overflow-hidden rounded-2xl border bg-[#fbfbf8] shadow-sm",
+        "relative overflow-hidden rounded-2xl border bg-[#fbfbf8] shadow-sm mt-5",
 
         // ⬇️ ONLY bottom torn edge, 20px
         "after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-2 after:rotate-180 after:bg-muted",
@@ -80,13 +102,44 @@ export function TornLinedPaperCard({
         <CardContent className="relative text-sm text-zinc-700 text-base font-[Rosemary]">
           {children}
           {attachments.map((attachment, index) => (
-            <PopupImage url={attachment} key={index}/>
+            <PopupImage url={attachment} key={index} />
           ))}
         </CardContent>
       </div>
       <div className={"absolute top-1 right-5 text-cyan-700"}>
         {date.toDateString().slice(4)}
       </div>
+
+      <Dialog>
+        <form>
+          <DialogTrigger asChild>
+            <HugeiconsIcon
+              icon={Trash2}
+              className={"absolute bottom-2 right-1 text-red-500"}
+            ></HugeiconsIcon>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Si si istý/á?</DialogTitle>
+              <DialogDescription>
+                Navždy zmažeme tento epický obrázok
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button variant="outline">Zrušiť</Button>
+              </DialogClose>
+              <Button
+                type="submit"
+                variant="destructive"
+                onClick={async () => await fetch("/api/uploadthing/deletePost/" + id,)}
+              >
+                Zmaž
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </form>
+      </Dialog>
     </Card>
   );
 }

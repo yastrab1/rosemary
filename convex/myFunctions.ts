@@ -2,7 +2,8 @@ import {v} from "convex/values";
 import {query, mutation, action} from "./_generated/server";
 import {api} from "./_generated/api";
 import {getAuthUserId} from "@convex-dev/auth/server";
-
+import { utapi } from "../app/server/uploadthing";
+import { cookies } from "next/headers";
 // Write your Convex functions in any file inside this directory (`convex`).
 // See https://docs.convex.dev/functions for more.
 
@@ -30,9 +31,17 @@ export const addPost = mutation({
         })
     }
 })
+export const getPost = query({
+  args: {id:v.id("posts")},
+  handler: async (ctx, args) => {
+    const post = await ctx.db.get("posts",args.id);
+    return post;
+  },
+});
+
 export const deletePost = mutation({
-    args:{id:v.id("posts")},
-    handler: async (ctx,args) => {
-        await ctx.db.delete(args.id)
-    }
+  args:{id:v.id("posts")},
+  handler: async (ctx,args) => {
+    await ctx.db.delete(args.id);
+  }
 })

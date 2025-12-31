@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5abfbab9-7e3f-4a16-b496-ea9f7488b326" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/api/uploadthing/deletePost/[slug]/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/server/uploadthing.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/server/inner.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/server/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/signin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/AddPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/AddPost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Posts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/JaggedText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/JaggedText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/convex/myFunctions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/convex/myFunctions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,14 +20,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="58" />
+    <option name="cachedIndexableFilesCount" value="74" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -66,6 +71,7 @@
       <recent name="$PROJECT_DIR$/app/AddPost.tsx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/api/uploadthing/deletePost/[slug]" />
       <recent name="$PROJECT_DIR$/app/server" />
       <recent name="$PROJECT_DIR$/components" />
     </key>
@@ -100,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1767123647724</updated>
       <workItem from="1767123648961" duration="7590000" />
-      <workItem from="1767175806013" duration="5358000" />
+      <workItem from="1767175806013" duration="8754000" />
     </task>
     <servers />
   </component>
