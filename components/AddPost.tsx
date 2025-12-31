@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import UploadAttachments from "@/components/UploadButton";
 import { PopupImage } from "@/components/PopupImage";
 import * as React from "react";
+import { DatePickerDemo } from "@/components/ui/DatePicker";
 
 export function AddPost({
   setPostContent,
@@ -38,7 +39,9 @@ export function AddPost({
       {attachments.map((attachment, index) => (
         <PopupImage url={attachment} key={index} />
       ))}
+      <DatePickerDemo/>
       <UploadAttachments setAttachments={setPostAttachment} />
+
     </div>
   );
 }

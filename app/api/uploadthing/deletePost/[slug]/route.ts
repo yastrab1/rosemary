@@ -12,13 +12,27 @@ export async function GET(
   if (!token) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const { slug } = await params;
-  await utapi.deleteFiles([slug])
-
   const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+  const { slug } = await params;
+  // @ts-expect-error ID is part of the table but not provable to convex
+  const post = await client.query(api.myFunctions.getPost, { id: slug });
+  if (post == null) {
+    return NextResponse.json(
+      { message: "Deleting nonenxistent post" },
+      { status: 400 },
+    );
+  }
+  const attachments = post.attachments.filter(Boolean);
+
+  const fileIds = attachments.map(
+    (attachment: string) => attachment.split("/").pop() || "",
+  );
+
+  await utapi.deleteFiles(fileIds);
+
   if (token) client.setAuth(token);
   // @ts-expect-error ID is part of the table but not provable to convex
   await client.mutation(api.myFunctions.deletePost, { id: slug });
   return new Response("ok");
-  return NextResponse.json({"message": "success"},{status:200});
+  return NextResponse.json({ message: "success" }, { status: 200 });
 }
