@@ -13,12 +13,17 @@ import {
 } from "@/components/ui/popover";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { CalendarIcon } from "@hugeicons/core-free-icons";
+import { Dispatch, SetStateAction } from "react";
 
-export function DatePickerDemo() {
-  const [date, setDate] = React.useState<Date>();
-
+export function PostDatePicker({
+  date,
+  setDate,
+}: {
+  date: Date;
+  setDate: Dispatch<SetStateAction<Date>>;
+}) {
   return (
-    <Popover>
+    <Popover >
       <PopoverTrigger asChild>
         <Button
           variant="outline"
@@ -30,7 +35,7 @@ export function DatePickerDemo() {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">
-        <Calendar mode="single" selected={date} onSelect={setDate} />
+        <Calendar required={true} mode="single" selected={date} onSelect={setDate} />
       </PopoverContent>
     </Popover>
   );

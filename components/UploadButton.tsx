@@ -7,8 +7,8 @@ export default function UploadAttachments({
   setAttachments,
 }: {setAttachments:Dispatch<SetStateAction<string[]>>}) {
   return (
-    <main className="items-center">
-      <UploadButton
+
+      <UploadButton className={"inline"}
         endpoint="imageUploader"
         onBeforeUploadBegin={async (files) => {
           const result = [];
@@ -32,6 +32,5 @@ export default function UploadAttachments({
           alert(`ERROR! ${error.message}`);
         }}
       />
-    </main>
   );
 }

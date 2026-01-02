@@ -19,15 +19,21 @@ export function PopupImage({url}:{url:string}) {
     <Dialog>
       <form>
         <DialogTrigger asChild>
-          <Image src={url} alt={""} width={100} height={100} className="mt-2"/>
+          <Image src={url} alt={""} width={100} height={100} className="mt-2" />
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="min-w-[70%]">
           <VisuallyHidden>
             <DialogTitle asChild>
               <Label htmlFor="image-url">Image</Label>
             </DialogTitle>
           </VisuallyHidden>
-          <Image src={url} alt={""} width={1920} height={1200} className="mt-2"/>
+          <Image
+            src={url}
+            alt={""}
+            width={1920}
+            height={1200}
+            className="mt-2"
+          />
           <DialogFooter>
             <DialogClose asChild>
               <Button variant="outline">Cancel</Button>

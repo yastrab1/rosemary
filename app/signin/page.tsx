@@ -38,11 +38,10 @@ export default function SignIn() {
           />
         </div>
         <h1 className="text-3xl font-bold text-slate-800 text-slate-200">
-          Convex + Next.js + Convex Auth
+          Rosemary
         </h1>
         <p className="text-slate-600 text-slate-400">
-          This demo uses Convex Auth for authentication, so you will need to
-          sign in or sign up to access the demo.
+          Prihlas 
         </p>
       </div>
       <form
@@ -64,7 +63,7 @@ export default function SignIn() {
         }}
       >
         <input
-          className="bg-white bg-slate-900 text-foreground rounded-lg p-3 border border-slate-300 border-slate-600 focus:border-slate-500 focus:border-slate-400 focus:ring-2 focus:ring-slate-200 focus:ring-slate-700 outline-none transition-all placeholder:text-slate-400"
+          className="bg-white bg-slate-900 text-foreground rounded-lg p-3 border border-slate-600 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 focus:ring-slate-700 outline-none transition-all placeholder:text-slate-400"
           type="email"
           name="email"
           placeholder="Email"
@@ -72,7 +71,7 @@ export default function SignIn() {
         />
         <div className="flex flex-col gap-1">
           <input
-            className="bg-white bg-slate-900 text-foreground rounded-lg p-3 border border-slate-300 border-slate-600 focus:border-slate-500 focus:border-slate-400 focus:ring-2 focus:ring-slate-200 focus:ring-slate-700 outline-none transition-all placeholder:text-slate-400"
+            className="bg-white bg-slate-900 text-foreground rounded-lg p-3 border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 focus:ring-slate-700 outline-none transition-all placeholder:text-slate-400"
             type="password"
             name="password"
             placeholder="Password"

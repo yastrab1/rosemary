@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5abfbab9-7e3f-4a16-b496-ea9f7488b326" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/ui/DatePicker.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/uploadthing/deletePost/[slug]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/uploadthing/deletePost/[slug]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/signin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/AddPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/AddPost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PopupImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/PopupImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UploadButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UploadButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/DatePicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/DatePicker.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="74" />
+    <option name="cachedIndexableFilesCount" value="77" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -52,6 +55,7 @@
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/luki/WebstormProjects/rosemary/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,6 +68,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/app/AddPost.tsx" />
     </key>
@@ -103,7 +110,8 @@
       <option name="presentableId" value="Default" />
       <updated>1767123647724</updated>
       <workItem from="1767123648961" duration="7590000" />
-      <workItem from="1767175806013" duration="12491000" />
+      <workItem from="1767175806013" duration="13339000" />
+      <workItem from="1767295880412" duration="3623000" />
     </task>
     <servers />
   </component>

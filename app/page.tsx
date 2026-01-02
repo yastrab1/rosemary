@@ -11,34 +11,19 @@ import UploadButton from "@/components/UploadButton";
 import UploadAttachments from "@/components/UploadButton";
 
 export default function Home() {
-    const [content,setContent] = useState<string>("");
-    const [attachments,setAttachments] = useState<string[]>([]);
+
 
     return (
         <>
             <header
-                className="sticky top-0 z-10 bg-background/80 backdrop-blur-md p-4 border-b border-slate-200 dark:border-slate-700 flex flex-row justify-between items-center shadow-sm">
+                className="sticky top-0 z-10 bg-background/80 backdrop-blur-md px-4 border-b border-slate-200 dark:border-slate-700 flex flex-row justify-between items-center shadow-sm">
                 <div className="flex items-center gap-3">
                     <div className="flex items-center gap-3">
-                        <Image src="/convex.svg" alt="Convex Logo" width={32} height={32}/>
-                        <div className="w-px h-8 bg-slate-300 dark:bg-slate-600"></div>
-                        <Image
-                            src="/nextjs-icon-light-background.svg"
-                            alt="Next.js Logo"
-                            width={32}
-                            height={32}
-                            className="dark:hidden"
-                        />
-                        <Image
-                            src="/nextjs-icon-dark-background.svg"
-                            alt="Next.js Logo"
-                            width={32}
-                            height={32}
-                            className="hidden dark:block"
-                        />
+                        <Image src="/logo.png" alt="Convex Logo" width={150} height={0 }/>
+
                     </div>
-                    <h1 className="font-semibold text-slate-800 dark:text-slate-200">
-                        Convex + Next.js + Convex Auth
+                    <h1 className="font-semibold text-slate-800">
+                        Alex Markus
                     </h1>
                 </div>
                 <SignOutButton/>
@@ -46,7 +31,7 @@ export default function Home() {
             <main className="p-8 flex flex-col gap-8">
                 <Posts/>
 
-                <AddPost setPostAttachment={setAttachments} setPostContent={setContent} content={content} attachments={attachments}/>
+                <AddPost />
             </main>
         </>
     );
