@@ -3,7 +3,7 @@ import { api } from "@/convex/_generated/api";
 import Image from "next/image";
 
 export default async function ServerPage() {
-  const preloaded = await preloadQuery(api.myFunctions.getAllPosts, {});
+  const preloaded = await preloadQuery(api.posts.getAllPosts, {});
 
   const data = preloadedQueryResult(preloaded);
 

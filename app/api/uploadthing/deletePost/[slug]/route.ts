@@ -15,7 +15,7 @@ export async function GET(
   const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
   const { slug } = await params;
   // @ts-expect-error ID is part of the table but not provable to convex
-  const post = await client.query(api.myFunctions.getPost, { id: slug });
+  const post = await client.query(api.posts.getPost, { id: slug });
   if (post == null) {
     return NextResponse.json(
       { message: "Deleting nonenxistent post" },
@@ -32,7 +32,7 @@ export async function GET(
 
   if (token) client.setAuth(token);
   // @ts-expect-error ID is part of the table but not provable to convex
-  await client.mutation(api.myFunctions.deletePost, { id: slug });
+  await client.mutation(api.posts.deletePost, { id: slug });
   return new Response("ok");
   return NextResponse.json({ message: "success" }, { status: 200 });
 }

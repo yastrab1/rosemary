@@ -9,7 +9,7 @@ import * as React from "react";
 import { PostDatePicker } from "@/components/ui/DatePicker";
 
 export function AddPost() {
-  const addPost = useMutation(api.myFunctions.addPost);
+  const addPost = useMutation(api.posts.addPost);
 
   const [content, setContent] = useState<string>("");
   const [attachments, setAttachments] = useState<string[]>([]);

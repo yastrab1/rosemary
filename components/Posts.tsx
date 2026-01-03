@@ -4,7 +4,7 @@ import {Card} from "@/components/ui/card";
 import {Post} from "@/components/ui/JaggedText";
 
 export default function Content() {
-    const posts = useQuery(api.myFunctions.getAllPosts);
+    const posts = useQuery(api.posts.getAllPosts);
 
     if (posts === undefined) {
         return <div>Loading...</div>;

@@ -36,7 +36,7 @@ export const myQueryFunction = query({
 Using this query function in a React component looks like:
 
 ```ts
-const data = useQuery(api.myFunctions.myQueryFunction, {
+const data = useQuery(api.posts.myQueryFunction, {
   first: 10,
   second: "hello",
 });
@@ -73,7 +73,7 @@ export const myMutationFunction = mutation({
 Using this mutation function in a React component looks like:
 
 ```ts
-const mutation = useMutation(api.myFunctions.myMutationFunction);
+const mutation = useMutation(api.posts.myMutationFunction);
 function handleButtonPress() {
   // fire and forget, the most common way to use mutations
   mutation({ first: "Hello!", second: "me" });
