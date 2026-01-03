@@ -12,5 +12,9 @@ export default defineSchema({
     author: v.string(),
     date: v.int64(),
     attachments: v.array(v.string())
+  }),
+  films: defineTable({
+    name: v.string(),
+    watched: v.boolean()
   })
 });
