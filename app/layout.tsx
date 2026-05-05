@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <ConvexAuthNextjsServerProvider>
-      <html lang="en" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
+      <html lang="en" suppressHydrationWarning className={cn("light font-sans", inter.variable)}>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
