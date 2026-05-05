@@ -38,7 +38,7 @@ export default function Page() {
         Speaking of referencie, spomínala si že chodíš so mnou iba preto, že na
         mňa treba dávať pozor. <br />
         Tak tomu trochu dajme štýl s
-        <Link href={"/dashboard"}> ružovo-fialovou dashboard</Link>, nie?
+        <Link className={"underline"} href={"/dashboard"}> ružovo-fialovou dashboard</Link>, nie?
       </p>
     </div>
   );
