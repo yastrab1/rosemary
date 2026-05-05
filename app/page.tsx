@@ -6,13 +6,17 @@ import {useRouter} from "next/navigation";
 import Image from "next/image";
 import Posts from "@/components/Posts";
 import {AddPost} from "@/components/AddPost";
-import {useState} from "react";
+import { useEffect, useState } from "react";
 import UploadButton from "@/components/UploadButton";
 import UploadAttachments from "@/components/UploadButton";
+import { useTheme } from "next-themes";
 
 export default function Home() {
 
-
+  const { setTheme } = useTheme();
+  useEffect(() => {
+    setTheme("light");
+  }, [setTheme]);
     return (
         <>
             <header
