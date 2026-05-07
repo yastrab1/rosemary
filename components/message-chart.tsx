@@ -150,8 +150,10 @@ export function MessageChart() {
       <Card className="@container/card">
         <CardHeader>
           <CardTitle>Graf správ</CardTitle>
-          <CardDescription>
-            <div className="flex gap-2 items-center overflow-x-auto">
+          <CardDescription
+            className={"overflow-x-auto flex gap-2 items-center"}
+          >
+            <div className=" ">
               <Input
                 className="h-8 w-40"
                 type="text"
@@ -159,28 +161,48 @@ export function MessageChart() {
                 value={queryWord}
                 onChange={(e) => setQueryWord(e.target.value)}
               />
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button variant="outline" size="sm" className="text-sm font-normal">
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {format(startDate, "MMM d, yyyy")}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                  <Calendar mode="single" required selected={startDate} onSelect={setStartDate} />
-                </PopoverContent>
-              </Popover>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button variant="outline" size="sm" className="text-sm font-normal">
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {format(endDate, "MMM d, yyyy")}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                  <Calendar mode="single" required selected={endDate} onSelect={setEndDate} />
-                </PopoverContent>
-              </Popover>
+              <div className={"inline"}>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-sm font-normal"
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {format(startDate, "MMM d, yyyy")}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0">
+                    <Calendar
+                      mode="single"
+                      required
+                      selected={startDate}
+                      onSelect={setStartDate}
+                    />
+                  </PopoverContent>
+                </Popover>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-sm font-normal"
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {format(endDate, "MMM d, yyyy")}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0">
+                    <Calendar
+                      mode="single"
+                      required
+                      selected={endDate}
+                      onSelect={setEndDate}
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
             </div>
           </CardDescription>
         </CardHeader>
@@ -192,17 +214,44 @@ export function MessageChart() {
             <ComposedChart data={chartData}>
               <defs>
                 <linearGradient id="fillLukas" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor={chartConfig.lukas.color} stopOpacity={1.0} />
-                  <stop offset="95%" stopColor={chartConfig.lukas.color} stopOpacity={0.1} />
+                  <stop
+                    offset="5%"
+                    stopColor={chartConfig.lukas.color}
+                    stopOpacity={1.0}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor={chartConfig.lukas.color}
+                    stopOpacity={0.1}
+                  />
                 </linearGradient>
                 <linearGradient id="fillJulka" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor={chartConfig.julka.color} stopOpacity={0.8} />
-                  <stop offset="95%" stopColor={chartConfig.julka.color} stopOpacity={0.1} />
+                  <stop
+                    offset="5%"
+                    stopColor={chartConfig.julka.color}
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor={chartConfig.julka.color}
+                    stopOpacity={0.1}
+                  />
                 </linearGradient>
               </defs>
               <CartesianGrid vertical={false} />
-              <YAxis yAxisId="left" tickLine={false} axisLine={false} tickMargin={8} />
-              <YAxis yAxisId="right" orientation="right" tickLine={false} axisLine={false} tickMargin={8} />
+              <YAxis
+                yAxisId="left"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={8}
+              />
+              <YAxis
+                yAxisId="right"
+                orientation="right"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={8}
+              />
               <XAxis
                 dataKey="date"
                 tickLine={false}
@@ -211,7 +260,10 @@ export function MessageChart() {
                 minTickGap={32}
                 tickFormatter={(value) => {
                   const date = new Date(value);
-                  return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+                  return date.toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                  });
                 }}
               />
               <ChartTooltip
@@ -219,15 +271,40 @@ export function MessageChart() {
                 content={
                   <ChartTooltipContent
                     labelFormatter={(value) =>
-                      new Date(value).toLocaleDateString("en-US", { month: "short", day: "numeric" })
+                      new Date(value).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                      })
                     }
                     indicator="dot"
                   />
                 }
               />
-              {queryWord == "" ? <Bar dataKey="calls" yAxisId="right" fill={chartConfig.calls.color} opacity={0.4} radius={[2, 2, 0, 0]} /> : <div></div>}
-              <Area dataKey="julka" yAxisId="left" type="natural" fill="url(#fillJulka)" stroke={chartConfig.julka.color} />
-              <Area dataKey="lukas" yAxisId="left" type="natural" fill="url(#fillLukas)" stroke={chartConfig.lukas.color} />
+              {queryWord == "" ? (
+                <Bar
+                  dataKey="calls"
+                  yAxisId="right"
+                  fill={chartConfig.calls.color}
+                  opacity={0.4}
+                  radius={[2, 2, 0, 0]}
+                />
+              ) : (
+                <div></div>
+              )}
+              <Area
+                dataKey="julka"
+                yAxisId="left"
+                type="natural"
+                fill="url(#fillJulka)"
+                stroke={chartConfig.julka.color}
+              />
+              <Area
+                dataKey="lukas"
+                yAxisId="left"
+                type="natural"
+                fill="url(#fillLukas)"
+                stroke={chartConfig.lukas.color}
+              />
             </ComposedChart>
           </ChartContainer>
         </CardContent>
@@ -241,7 +318,12 @@ export function MessageChart() {
           <CardContent className="max-h-96 overflow-y-auto">
             <div className="space-y-1 text-sm font-mono">
               {messages.map((m, i) => (
-                <p key={i} className="text-muted-foreground font-[Jetbrains_Mono]">{m}</p>
+                <p
+                  key={i}
+                  className="text-muted-foreground font-[Jetbrains_Mono]"
+                >
+                  {m}
+                </p>
               ))}
             </div>
           </CardContent>
