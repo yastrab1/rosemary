@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import query from "@/lib/neon";
 import { Card } from "@/components/ui/card";
 import { Heading1 } from "@hugeicons/core-free-icons";
@@ -12,7 +12,7 @@ const MAX_QUERY = "SELECT MAX(duration_minutes) FROM whatsapp_calls";
 export default function Page() {
 
   const { setTheme } = useTheme();
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTheme("light");
   }, [setTheme]);
 
