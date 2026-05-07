@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/sidebar";
 import { CirclePlusIcon, MailIcon } from "lucide-react";
 import Link from "next/link";
+import { QuillWriteIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 export function NavMain({
   items,
@@ -24,22 +26,27 @@ export function NavMain({
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
         <SidebarMenu>
-          <SidebarMenuItem className="flex items-center gap-2">
-            <SidebarMenuButton
-              tooltip="Quick Create"
-              className="min-w-8 bg-primary text-primary-foreground duration-200 ease-linear hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground"
+          <SidebarMenuItem>
+            <Link
+              href="https://www.instagram.com/direct/t/17845054406946343/"
+              className="flex items-center gap-2"
             >
-              <CirclePlusIcon />
-              <span>Quick Create</span>
-            </SidebarMenuButton>
-            <Button
-              size="icon"
-              className="size-8 group-data-[collapsible=icon]:opacity-0"
-              variant="outline"
-            >
-              <MailIcon />
-              <span className="sr-only">Inbox</span>
-            </Button>
+              <SidebarMenuButton
+                tooltip="Napíšte mu"
+                className="min-w-8 bg-primary text-primary-foreground duration-200 ease-linear hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground"
+              >
+                <HugeiconsIcon icon={QuillWriteIcon} />
+                <span>Napíšte mu</span>
+              </SidebarMenuButton>
+              <Button
+                size="icon"
+                className="size-8 group-data-[collapsible=icon]:opacity-0"
+                variant="outline"
+              >
+                <MailIcon />
+                <span className="sr-only">Inbox</span>
+              </Button>
+            </Link>
           </SidebarMenuItem>
         </SidebarMenu>
         <SidebarMenu>
