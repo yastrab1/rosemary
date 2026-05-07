@@ -192,12 +192,12 @@ export function MessageChart() {
             <ComposedChart data={chartData}>
               <defs>
                 <linearGradient id="fillLukas" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="var(--color-lukas)" stopOpacity={1.0} />
-                  <stop offset="95%" stopColor="var(--color-lukas)" stopOpacity={0.1} />
+                  <stop offset="5%" stopColor={chartConfig.lukas.color} stopOpacity={1.0} />
+                  <stop offset="95%" stopColor={chartConfig.lukas.color} stopOpacity={0.1} />
                 </linearGradient>
                 <linearGradient id="fillJulka" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="var(--color-julka)" stopOpacity={0.8} />
-                  <stop offset="95%" stopColor="var(--color-julka)" stopOpacity={0.1} />
+                  <stop offset="5%" stopColor={chartConfig.julka.color} stopOpacity={0.8} />
+                  <stop offset="95%" stopColor={chartConfig.julka.color} stopOpacity={0.1} />
                 </linearGradient>
               </defs>
               <CartesianGrid vertical={false} />
@@ -225,9 +225,9 @@ export function MessageChart() {
                   />
                 }
               />
-              <Bar dataKey="calls" yAxisId="right" fill="var(--color-calls)" opacity={0.4} radius={[2, 2, 0, 0]} />
-              <Area dataKey="julka" yAxisId="left" type="natural" fill="url(#fillJulka)" stroke="var(--color-julka)" />
-              <Area dataKey="lukas" yAxisId="left" type="natural" fill="url(#fillLukas)" stroke="var(--color-lukas)" />
+              {queryWord == "" ? <Bar dataKey="calls" yAxisId="right" fill={chartConfig.calls.color} opacity={0.4} radius={[2, 2, 0, 0]} /> : <div></div>}
+              <Area dataKey="julka" yAxisId="left" type="natural" fill="url(#fillJulka)" stroke={chartConfig.julka.color} />
+              <Area dataKey="lukas" yAxisId="left" type="natural" fill="url(#fillLukas)" stroke={chartConfig.lukas.color} />
             </ComposedChart>
           </ChartContainer>
         </CardContent>

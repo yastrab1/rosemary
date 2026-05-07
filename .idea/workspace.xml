@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5abfbab9-7e3f-4a16-b496-ea9f7488b326" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/wrapped/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/wrapped/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/chart-area-interactive.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/chart-area-interactive.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/message-chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/message-chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/section-cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/section-cards.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +119,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-WS-261.22158.274" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.23567.141" />
       </set>
     </attachedChunks>
   </component>
@@ -134,7 +138,8 @@
       <workItem from="1777572640845" duration="4739000" />
       <workItem from="1777853268281" duration="3748000" />
       <workItem from="1778016877478" duration="4352000" />
-      <workItem from="1778021531816" duration="1043000" />
+      <workItem from="1778021531816" duration="1419000" />
+      <workItem from="1778192192988" duration="832000" />
     </task>
     <servers />
   </component>
