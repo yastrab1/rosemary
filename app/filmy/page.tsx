@@ -3,7 +3,7 @@ import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Film from "@/components/Film";
@@ -11,7 +11,7 @@ import { useTheme } from "next-themes";
 
 export default function Page() {
   const { setTheme } = useTheme();
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTheme("light");
   }, [setTheme]);
   const listFilms = useQuery(api.films.listFilms);

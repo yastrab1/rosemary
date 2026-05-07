@@ -151,7 +151,7 @@ export function MessageChart() {
         <CardHeader>
           <CardTitle>Graf správ</CardTitle>
           <CardDescription>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center overflow-x-auto">
               <Input
                 className="h-8 w-40"
                 type="text"

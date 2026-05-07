@@ -2,13 +2,13 @@
 
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
 export default function SignIn() {
   const { setTheme } = useTheme();
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTheme("light");
   }, [setTheme]);
   const { signIn } = useAuthActions();
