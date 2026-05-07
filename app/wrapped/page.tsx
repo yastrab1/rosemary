@@ -4,11 +4,18 @@ import query from "@/lib/neon";
 import { Card } from "@/components/ui/card";
 import { Heading1 } from "@hugeicons/core-free-icons";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const SUM_QUERY = "SELECT SUM(duration_minutes) FROM whatsapp_calls";
 const MAX_QUERY = "SELECT MAX(duration_minutes) FROM whatsapp_calls";
 
 export default function Page() {
+
+  const { setTheme } = useTheme();
+  useEffect(() => {
+    setTheme("light");
+  }, [setTheme]);
+
   const [sum, setSum] = useState(0);
   const [max, setMax] = useState(0);
   useEffect(() => {
